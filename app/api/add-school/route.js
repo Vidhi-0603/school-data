@@ -25,6 +25,37 @@ export async function POST(req) {
     const email_id = form.get("email_id");
     const image = form.get("image");
 
+    //for development:
+    // const imgFolder = path.join(process.cwd(), "public", "schoolImages");
+
+    // Create folder if missing
+    // if (!fs.existsSync(imgFolder)) {
+    //   fs.mkdirSync(imgFolder, { recursive: true });
+    // }
+
+    //Read form-data from request
+    
+    // Convert uploaded image to buffer
+    // const bytes = await image.arrayBuffer();
+    // const buffer = Buffer.from(bytes);
+
+    // Generate unique filename
+    // const fileName = `${Date.now()}-${image.name}`;
+    // const filePath = path.join(imgFolder, fileName);
+
+    //Save image locally
+    // await writeFile(filePath, buffer);
+
+    // const db = await getDB();
+    // const [rows] = await db.query(
+    //   `INSERT INTO schools (name, address, city, state, contact, image, email_id)
+    //    VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    //   [name, address, city, state, contact, fileName, email_id]
+    // );
+
+
+    // for deployment use cloudinary:
+
     if (!image) {
       return NextResponse.json({ error: "No image provided" }, { status: 400 });
     }
