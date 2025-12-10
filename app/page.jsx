@@ -18,15 +18,25 @@ export default function AddSchool() {
     formData.append("contact", data.contact);
     formData.append("email_id", data.email_id);
     formData.append("image", data.image[0]);
-    const res = await fetch("/api/add-school", {
-      method: "POST",
-      body: formData,
-    });
 
-    const result = await res.json();
-    console.log(result, "school..");
+    try {
+      const res = await fetch("/api/add-school", {
+        method: "POST",
+        body: formData,
+      });
 
-    alert("School added!");
+      const result = await res.json();
+
+      if (!res.ok) {
+        // if status is 400 / 500
+        alert("Failed to add school: " + (result.error || "Unknown error"));
+        return;
+      }
+
+      alert("School added successfully!");
+    } catch (err) {
+      alert("Network error: Could not reach server");
+    }
   };
 
   return (
