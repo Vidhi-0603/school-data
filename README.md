@@ -1,7 +1,5 @@
 # School Data Management
 
-[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/Vidhi-0603/school-data)
-
 This is a full-stack web application built with Next.js for managing school records. It allows users to add new school details, including an image, and view a gallery of all submitted schools. The application uses a MySQL database for data persistence and Cloudinary for image storage.
 
 ## Features
