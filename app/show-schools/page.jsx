@@ -17,6 +17,7 @@ export default async function ShowSchools() {
             <p className="text-gray-500">{s.city}</p>
           </div>
         ))}
+        
       </div>
     </div>
   );
