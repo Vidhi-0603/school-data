@@ -1,4 +1,4 @@
-import { getDB } from "../db";
+import { getDB } from "./db";
 
 export async function getSchoolsFromDB() {
   const db = await getDB();
