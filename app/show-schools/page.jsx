@@ -1,7 +1,9 @@
+export const dynamic = "force-dynamic";
+
 import { getSchoolsFromDB } from "../api/school";
 
 export default async function ShowSchools() {
- const schools = await getSchoolsFromDB();
+  const schools = await getSchoolsFromDB();
 
   return (
     <div className="p-6">
@@ -17,7 +19,6 @@ export default async function ShowSchools() {
             <p className="text-gray-500">{s.city}</p>
           </div>
         ))}
-        
       </div>
     </div>
   );
