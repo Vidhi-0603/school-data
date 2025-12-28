@@ -1,5 +1,6 @@
 export default async function ShowSchools() {
-  const res = await fetch("http://localhost:3000/api/get-schools", {
+  const res = await fetch("/api/get-schools", {
+    method: "POST",
     cache: "no-store", //get fresh data every time
   });
   const schools = await res.json();
