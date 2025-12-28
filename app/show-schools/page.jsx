@@ -1,9 +1,7 @@
+import { getSchoolsFromDB } from "../api/school";
+
 export default async function ShowSchools() {
-  const res = await fetch("/api/get-schools", {
-    method: "POST",
-    cache: "no-store", //get fresh data every time
-  });
-  const schools = await res.json();
+ const schools = await getSchoolsFromDB();
 
   return (
     <div className="p-6">
